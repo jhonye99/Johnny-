@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hookups in Your Area - 18+ Only</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    h1 {
+      color: #ff3366;
+    }
+    .btn {
+      background-color: #ff3366;
+      color: white;
+      padding: 15px;
+      border: none;
+      font-size: 18px;
+      border-radius: 8px;
+      margin-top: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .hidden {
+      display: none;
+    }
+    #countdown {
+      font-size: 24px;
+      color: #00ff99;
+      margin-top: 15px;
+    }
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="ageCheck">
+      <h1>Adults Only</h1>
+      <p>This site contains explicit content. You must be 18+ to continue.</p>
+      <button class="btn" onclick="verifyAge()">I Confirm I'm Over 18</button>
+    </div>
+
+    <div id="loadingScreen" class="hidden">
+      <p>Verifying age...</p>
+      <div id="countdown">3</div>
+    </div>
+
+    <div id="finalStep" class="hidden">
+      <img src="https://i.imgur.com/3zQZ5pU.jpg" alt="Hot Girls Nearby">
+      <p>Women near <strong>your city</strong> are looking for casual fun tonight.</p>
+      <p>No signup needed. Just click below and start chatting!</p>
+      <a href="https://www.blockforgrabs.work/?sl=5939216-98417&pub_click_id={External_ID_from_traffic_source}&site={subID}&pub_sub_id={sub_}" class="btn">View Profiles</a>
+    </div>
+  </div>
+
+  <script>
+    function verifyAge() {
+      document.getElementById('ageCheck').classList.add('hidden');
+      document.getElementById('loadingScreen').classList.remove('hidden');
+      let countdown = 3;
+      const interval = setInterval(() => {
+        countdown--;
+        document.getElementById('countdown').textContent = countdown;
+        if (countdown <= 0) {
+          clearInterval(interval);
+          document.getElementById('loadingScreen').classList.add('hidden');
+          document.getElementById('finalStep').classList.remove('hidden');
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
